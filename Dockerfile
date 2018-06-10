@@ -1,12 +1,12 @@
-FROM microsoft/dotnet:2.0.7-sdk-2.1.200-jessie
+FROM microsoft/dotnet:2.1.300-sdk-stretch
 
 ENV SONAR_SCANNER_MSBUILD_VERSION 4.3.0.1333
 ENV DOCKER_VERSION 17.06.2
 
 # Install Java 8
-RUN echo deb http://http.debian.net/debian jessie-backports main > /etc/apt/sources.list.d/jessie-backports.list \
+RUN echo deb http://http.debian.net/debian stretch-backports main > /etc/apt/sources.list.d/stretch-backports.list \
     && apt update \
-    && apt install -y -t jessie-backports openjdk-8-jre
+    && apt install -y -t stretch-backports openjdk-8-jre
 
 # Install docker binaries
 RUN apt-get update \
